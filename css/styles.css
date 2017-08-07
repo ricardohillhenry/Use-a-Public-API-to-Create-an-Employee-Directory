@@ -1,0 +1,74 @@
+body{
+	background-color: #fcfcfc;
+}
+
+.employee-container{
+	display: block;
+	padding: 1%;
+	margin: 1.5%;
+	width: 400px;
+	border: 1px solid #b0b4b6;
+	border-radius: 10px;
+}
+.employee-container:hover{
+	background-color: #e7e7e7;
+	cursor: pointer;
+}
+.employee-name{
+	color: #2c2e30;
+	font-weight: 600;
+}
+.employee-email, .employee-location, .employee-modal-info{
+	color: #b0b4b6;
+}
+.employee-info{
+	float: right;
+	font-size: 1em;
+}
+ul{
+	display: flex;
+	flex-wrap: wrap;	
+	justify-content: center; /* center items vertically, in this case */
+    align-items: center; 
+}
+
+li{
+	list-style: none;
+}
+
+img{
+	border-radius: 50%;
+	width: 30%;
+}
+.capitalize {
+    text-transform: capitalize;   
+  }
+
+div#wrapper{
+	width: 100%;
+	display: block;
+	background-color: #fcfcfc;
+}
+
+#modal{
+	display:table;
+	position: absolute;
+	margin: 0 auto;
+	top: 30%;
+	left: 40%;
+	z-index: 0;
+	width: 500px;
+	height: 600px;
+	background-color: white;
+	border: 1px solid #b0b4b6;
+	border-radius: 10px;
+}
+
+#modal-info-container{
+	vertical-align: middle;
+	text-align: center;
+}
+
+.close{
+	cursor: pointer;
+}
