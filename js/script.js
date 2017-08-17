@@ -26,6 +26,7 @@ $.ajax({
     	$(`#employee${employeeIndex}`).click(function(){
     		$("#modal").empty();
     		$("#modal").show();
+    		$("#wrapper").addClass("blur");
 			$("#modal").append(`
 				<span class="close">&times;</span>
 				<div id="modal-info-container">
@@ -35,16 +36,24 @@ $.ajax({
 						<p id="employee${employeeIndex}-modal-email" class="employee-modal-info">${employee.email}</p>
 						<p id="employee${employeeIndex}-modal-location" class="capitalize employee-modal-info">${employee.location.city}, ${employee.location.state}</p>
 					</div>
+					<hr>
 					<div id="employee${employeeIndex}-lower-info" class="modal-info employee-modal-info">
 						<p id="employee${employeeIndex}-modal-phone" class="capitalize employee-modal-info">${employee.cell}</p>
 						<p id="employee${employeeIndex}-modal-address" class="capitalize employee-modal-info">${employee.location.street}, ${employee.location.state} ${employee.location.postcode}</p>
-						<p id="employee${employeeIndex}-modal-birthday" class="capitalize employee-modal-info">Birthday: ${employee.dob}</p>
+						<p id="employee${employeeIndex}-modal-birthday" class="capitalize employee-modal-info">Birthday: ${formatBirthday(employee.dob)}</p>
 					</div>
 				</div>
 			`)
-
+			
 			$(".close").click(function(){
 				$("#modal").hide();
+				$("#wrapper").removeClass("blur");
+			});
+			$( document ).on("keydown", (e) => {
+			    if (e.keyCode === 27) { // ESC
+			        $("#modal").hide();
+			        $("#wrapper").removeClass("blur");
+			    }
 			});
 		});
 
@@ -56,3 +65,8 @@ $.ajax({
 	console.log(employees);
   } //end success
 });// end ajax
+
+function formatBirthday(bday){
+	let temp = bday.substr(0, 10).split('-');
+	return `${temp[1]}/${temp[2]}/${temp[0].substr(2,4)}`;
+}

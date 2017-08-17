@@ -1,14 +1,18 @@
 body{
 	background-color: #fcfcfc;
 }
-
-.employee-container{
+#employee-header, .employee-container{
 	display: block;
 	padding: 1%;
 	margin: 1.5%;
+}
+.employee-container{
 	width: 400px;
 	border: 1px solid #b0b4b6;
 	border-radius: 10px;
+}
+#employee-header{
+	font-size: 1.4em;
 }
 .employee-container:hover{
 	background-color: #e7e7e7;
@@ -65,10 +69,25 @@ div#wrapper{
 }
 
 #modal-info-container{
+	margin-top: 80px;
 	vertical-align: middle;
 	text-align: center;
 }
 
+.blur {
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    filter: blur(2px);
+ }
+
 .close{
 	cursor: pointer;
+	font-size: 2em;
+	position: absolute;
+	right: 5%;
+}
+
+hr{
+	width: 82.5%;
+	opacity: 0.3;
 }
